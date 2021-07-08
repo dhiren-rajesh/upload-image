@@ -1,0 +1,29 @@
+navbar {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5rem 0 2rem;
+}
+
+.brand {
+  background-color: #9900ee;
+  background-image: linear-gradient(315deg, #0cb2f3 0%, #d775e0 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about {
+  font-size: 1.5rem;
+  background-color: #9900ee;
+  background-image: linear-gradient(315deg, #0cb2f3 0%, #d775e0 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  navbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .about {
+    margin-left: 7rem;
+  }
+}

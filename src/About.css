@@ -1,0 +1,37 @@
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.feature-title {
+  margin: 3rem 3rem 0.5rem 7rem;
+  background-color: #9900ee;
+  background-image: linear-gradient(315deg, #0cb2f3 0%, #d775e0 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.content {
+  margin: 0 3rem 3rem 7rem;
+  text-align: center;
+  background-color: #9900ee;
+  background-image: linear-gradient(315deg, #0cb2f3 0%, #d775e0 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .feature-title {
+    margin: 1.5rem 3rem 0 3rem;
+  }
+  .content {
+    margin: 0 3rem 2rem 3rem;
+  }
+}
