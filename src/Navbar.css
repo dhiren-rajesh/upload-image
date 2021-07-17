@@ -5,17 +5,21 @@ navbar {
 }
 
 .brand {
-  background-color: #9900ee;
+  /* background-color: #9900ee;
   background-image: linear-gradient(315deg, #0cb2f3 0%, #d775e0 74%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+  color: white;
+  font-family: "Lato", sans-serif;
 }
 .about {
   font-size: 1.5rem;
-  background-color: #9900ee;
+  /* background-color: #9900ee;
   background-image: linear-gradient(315deg, #0cb2f3 0%, #d775e0 74%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+  color: white;
+  font-family: "Roboto", sans-serif;
 }
 
 @media screen and (max-width: 768px) {

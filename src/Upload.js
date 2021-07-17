@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { FileDrop } from "react-file-drop";
 import { drawRect } from "./Utilities";
-import * as tf from "@tensorflow/tfjs";
+//import * as tf from "@tensorflow/tfjs";
 //import * as cocossd from "@tensorflow-models/coco-ssd";
 import "./Upload.css";
 
@@ -93,18 +93,23 @@ function Upload(props) {
           id="upload-btn"
           onClick={onFileUpload}
         />
+        <label className="btn-fnc" htmlFor="analyze-btn">
+          Analyze
+        </label>
         <input
           type="button"
           style={{ display: "none" }}
           id="analyze-btn"
           onClick={() => {
+            if(selectedFile != null){
             console.log("start");
             //runCoco();
+            }
+            else{
+              alert("Please Choose a File First")
+            }
           }}
         />
-        <label className="btn-fnc" htmlFor="analyze-btn">
-          Analyze
-        </label>
       </div>
       <FileDrop
         onDrop={(file, e) => {
@@ -121,12 +126,13 @@ function Upload(props) {
       >
         {fileData()}
       </FileDrop>
-      <canvas
+      {/* <canvas
         className = "finalCanvas"
         ref={canvasRef}
-      />
+      /> */}
     </div>
   );
 }
 
 export default Upload;
+

@@ -5,21 +5,27 @@
 }
 
 .feature-title {
-  margin: 3rem 3rem 0.5rem 7rem;
-  background-color: #9900ee;
+  margin: 2rem auto auto auto;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  /* background-color: #9900ee;
   background-image: linear-gradient(315deg, #0cb2f3 0%, #d775e0 74%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
 }
 
 .content {
-  margin: 0 3rem 3rem 7rem;
+  margin: 0.5rem auto auto auto;
+  padding-bottom: 5rem;
   text-align: center;
-  background-color: #9900ee;
+  font-weight: 600;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  width: 20rem;
+  /* background-color: #9900ee;
   background-image: linear-gradient(315deg, #0cb2f3 0%, #d775e0 74%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 600;
+  -webkit-text-fill-color: transparent; */
 }
 
 @media screen and (max-width: 768px) {
@@ -29,9 +35,9 @@
     text-align: center;
   }
   .feature-title {
-    margin: 1.5rem 3rem 0 3rem;
+    margin: 1.5rem auto 0 auto;
   }
   .content {
-    margin: 0 3rem 2rem 3rem;
+    margin: 0.5rem auto 2rem auto;
   }
 }
