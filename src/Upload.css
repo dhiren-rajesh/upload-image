@@ -3,13 +3,8 @@
   padding: 2rem;
   text-align: center;
   width: 50rem;
-  /* background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18); */
 }
+
 .uploading {
   padding-bottom: 2rem;
 }
@@ -22,6 +17,7 @@
   background-color: #fff;
   border-radius: 5px;
 }
+
 .choose {
   /* background-color: #9900ee;
   background-image: linear-gradient(315deg, #0cb2f3 10%, #d775e0 74%);
@@ -32,11 +28,13 @@
   padding-bottom: 30px;
   font-family: "Roboto", sans-serif;
 }
+
 img {
   width: 600px;
   height: 300px;
   border-radius: 5px;
 }
+
 .finalCanvas {
   position: absolute;
   margin: 10rem auto 3rem auto;
@@ -46,6 +44,7 @@ img {
   z-index: 8;
   width: 600px;
   height: 300px;
+  padding: 3rem 0;
 }
 
 .btn-fnc {
@@ -74,12 +73,6 @@ img {
 
 @media screen and (max-width: 765px) {
   .upload-component {
-    /* background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18); */
     width: auto;
     margin: 0 0.5rem;
   }
@@ -92,7 +85,7 @@ img {
     height: 20rem;
   }
   .finalCanvas {
-    margin-top: 20rem;
+    margin-top: 35rem;
     width: 17rem;
     height: 20rem;
   }

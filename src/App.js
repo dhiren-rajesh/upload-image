@@ -3,10 +3,8 @@ import Navbar from './Navbar';
 
 function App() {
   return (
-      <div className="basic">
-        <div className="blur">
+      <div className="App">
         <Navbar/>
-          </div>
       </div>
        
   );
