@@ -7,9 +7,11 @@ export default function Navbar() {
     return (
         <div>
         <navbar>
-          <h1 className="brand">Imager</h1>
+          <h1 className="brand">
+            <a style={{color:'white' , textDecoration:'none'}} href="/">Imager</a>
+          </h1>
             <h3 className="about">
-              <a href="#about" style={{color:'white'}}>About</a>
+              <a href="#about" style={{color:'white' , textDecoration:'none'}}>About</a>
             </h3>
         </navbar>
         <Upload/>

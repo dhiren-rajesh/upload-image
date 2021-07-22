@@ -1,24 +1,25 @@
 import React, { useState, useRef } from "react";
 import { FileDrop } from "react-file-drop";
 import { drawRect } from "./Utilities";
-// import * as tf from "@tensorflow/tfjs";
-// import * as cocossd from "@tensorflow-models/coco-ssd";
+import * as tf from "@tensorflow/tfjs";
+import * as cocossd from "@tensorflow-models/coco-ssd";
 import "./Upload.css";
 
 function Upload(props) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [analyzedFile, setAnalyzedFile] = useState(null);
+  const [showBtn, setShowBtn] = useState(true);
   const [{ src, alt }, setFile] = useState({
     src: null,
     alt: "Upload an Image",
   });
   const canvasRef = useRef(null);
 
-  // const runCoco = async () => {
-  // const net = await cocossd.load();
-  // console.log("Handpose model loaded.");
-  // detect(net);
-  // };
+  const runCoco = async () => {
+  const net = await cocossd.load();
+  console.log("Handpose model loaded.");
+  detect(net);
+  };
 
   const detect = async (net) => {
     const img = document.getElementById("testimage");
@@ -52,8 +53,6 @@ function Upload(props) {
     }
   };
 
-  // Details of the uploaded file
-
   const fileData = () => {
     if (selectedFile != null) {
           return (
@@ -79,18 +78,36 @@ function Upload(props) {
   const analyzedData = () => {
     if(analyzedFile === "Analyzed"){
       return(
+      <div>
+      <div>
       <canvas
         className = "finalCanvas"
         ref={canvasRef}
       />
+      </div>
+      <div className="uploading-final">
+        <label className="btn-fnc" htmlFor="reupload-btn">
+          Upload Another File
+        </label>
+        <input
+          type="button"
+          style={{ display: "none"}}
+          id="reupload-btn"
+          onClick={() => {
+            window.location.reload();
+            }
+          }
+          />
+          </div>
+          </div>
       );
     }
   }
 
-  return (
-    <div className="upload-component">
-      <h1 className="uploadTxt">Please Upload a File</h1>
-      <div className="uploading">
+  const hideBtn = () =>{
+    if(showBtn){
+      return(
+        <div className="uploading">
         <input
           type="file"
           accept="image/jpeg"
@@ -105,20 +122,21 @@ function Upload(props) {
           type="button"
           style={{ display: "none" }}
           id="upload-btn"
-          onClick={onFileUpload}
+          onClick = {onFileUpload}
         />
         <label className="btn-fnc" htmlFor="analyze-btn">
           Analyze
         </label>
         <input
           type="button"
-          style={{ display: "none" }}
+          style={{ display: "none"}}
           id="analyze-btn"
           onClick={() => {
             if(selectedFile != null){
             console.log("start");
-            //runCoco();
-            setAnalyzedFile("Analyzed");
+            runCoco();
+            setAnalyzedFile("Analyzed"); 
+            setShowBtn(false);
             }
             else{
               alert("Please Choose a File First")
@@ -126,6 +144,14 @@ function Upload(props) {
           }}
         />
       </div>
+      );
+    }
+  }
+
+  return (
+    <div className="upload-component">
+      <h1 className="uploadTxt">Please Upload a File</h1>
+      {hideBtn()}
       <FileDrop
         onDrop={(file, e) => {
           console.log(file[0]);
